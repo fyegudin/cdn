@@ -22,7 +22,7 @@ def client(config):
     return Client(cache_type)
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="session", autouse=True)
 def logger(config):
     log_file = config.get("Logging", "log_file")
     log_level = config.get("Logging", "log_level")
